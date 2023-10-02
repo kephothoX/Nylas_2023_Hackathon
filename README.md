@@ -8,5 +8,7 @@ Open terminal and
 
 
 open Another Terminal Tab:
+> python3 -m venv nylas
+> pip install -r ./Server/requirements.txt
 > cd Server
 > source ../Start_Server.sh
