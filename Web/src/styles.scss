@@ -1,0 +1,257 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$red-palette: (
+  50: #ee735e,
+  100: #d15741,
+  200: #cf432a,
+  300: #d43b20,
+  400: #da3b1e,
+  500: #db2201,
+  600: #b42006,
+  700: #751200,
+  800: #6a1101,
+  900: #5b0e01,
+
+  contrast: (
+    50: rgba(black, 0.5),
+    100: rgba(black, 0.6),
+    200: rgba(black, 0.7),
+    300: rgba(black, 0.8),
+    400: rgba(black, 0.9),
+    500: rgba(white, 0.5),
+    600: rgba(white, 0.6),
+    700: rgba(white, 0.7),
+    800: rgba(white, 0.8),
+    900: rgba(white, 0.9),
+  )
+);
+
+
+$pink-palette: (
+  50: #e98fc6,
+  100: #db6fb2,
+  200: #ee55b3,
+  300: #d63097,
+  400: #df1d94,
+  500: #e6008e,
+  600: #b1066f,
+  700: #75064b,
+  800: #690442,
+  900: #46032c,
+
+  contrast: (
+    50: rgba(black, 0.5),
+    100: rgba(black, 0.6),
+    200: rgba(black, 0.7),
+    300: rgba(black, 0.8),
+    400: rgba(black, 0.9),
+    500: rgba(white, 0.5),
+    600: rgba(white, 0.6),
+    700: rgba(white, 0.7),
+    800: rgba(white, 0.8),
+    900: rgba(white, 0.9),
+  )
+);
+
+$green-palette: (
+  50: #5bf4c9,
+  100: #5bf4c9,
+  200: #5bf4c9,
+  300: #20f7ba,
+  400: #05f7b2,
+  500: #08e5a7,
+  600: #0acb94,
+  700: #07a075,
+  800: #06936b,
+  900: #066a4e,
+
+  contrast: (
+    50: rgba(black, 0.5),
+    100: rgba(black, 0.6),
+    200: rgba(black, 0.7),
+    300: rgba(black, 0.8),
+    400: rgba(black, 0.9),
+    500: rgba(white, 0.5),
+    600: rgba(white, 0.6),
+    700: rgba(white, 0.7),
+    800: rgba(white, 0.8),
+    900: rgba(white, 0.9),
+  )
+);
+
+$success: (500: #45e600);
+$danger: (500: #e42301);
+$info: (500: #00c8d6);
+
+
+// Define a light theme
+$ks-light-primary: mat.define-palette(mat.$green-palette, 500);
+$ks-light-accent: mat.define-palette(mat.$pink-palette, 500);
+$ks-light-warn: mat.define-palette(mat.$red-palette, 500);
+
+$ks-light-theme: mat.define-light-theme((
+ color: (
+   primary: $ks-light-primary,
+   accent: $ks-light-accent,
+   warn: $ks-light-warn,
+ )
+));
+
+// Define a dark theme
+$ks-dark-primary: mat.define-palette(mat.$green-palette, 700);
+$ks-dark-accent: mat.define-palette(mat.$pink-palette, 700);
+$ks-dark-warn: mat.define-palette(mat.$red-palette, 700);
+
+$ks-dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $ks-dark-primary,
+   accent: $ks-dark-accent,
+   warn: $ks-light-warn,
+ )
+));
+
+// Apply the light theme by default
+@include mat.core-theme($ks-light-theme);
+@include mat.button-theme($ks-light-theme);
+@include mat.all-component-themes($ks-light-theme);
+
+
+// Apply the dark theme only when the `.dark-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.dark-theme {
+  @include mat.core-color($ks-dark-theme);
+  @include mat.button-color($ks-dark-theme);
+  @include mat.all-component-colors($ks-dark-theme);
+}
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ks-theme: mat.define-light-theme((
+  color: (
+    primary: $ks-light-primary,
+    accent: $ks-light-accent,
+    warn: $ks-light-warn,
+ )
+));
+
+$ks-theme: mat.define-dark-theme((
+  color: (
+    primary: $ks-dark-primary,
+    accent: $ks-dark-accent,
+    warn: $ks-dark-warn,
+  )
+));
+
+
+/* You can add global styles to this file, and also import other style files */
+@import "styles/elements.scss";
+@import "styles/fonts.scss";
+@import "styles/links.scss";
+@import "styles/form.scss";
+@import "styles/typography.scss";
+@import "styles/utils.scss";
+
+$primary: #08e5a7;
+
+html, body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bg-primary{
+  background-color: #08e5a7 !important;
+
+}
+
+
+/*Media Queries*/
+
+@media screen and (min-width: 480px) {
+  /*section {
+    position: relative;
+    padding: 15px !important;
+    margin: 0 auto !important;
+  }*/
+}
+
+@media screen and (min-width: 760px) {
+  section {
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  section {
+    position: relative;
+    width: 95vw;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    position: relative;
+    width: 90vw;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  section {
+    position: relative;
+    width: 90vw;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  section {
+    position: relative;
+    width: 90vw;
+    padding: 5px;
+    margin: 0 auto !important;
+  }
+}
+
+
+html, body {
+  margin: 0;
+  height: auto;
+  filter: brightness(100%);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  scroll-behavior: auto;
+}
+
+.mat-elevation-z6 {
+    box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
