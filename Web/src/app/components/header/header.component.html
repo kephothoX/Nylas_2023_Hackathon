@@ -1,0 +1,73 @@
+<nav class="mat-elevation-z8">
+  <mat-toolbar class="mat-elevation-z8 bg-whiter">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="bg-whiter text-primary">
+      <mat-icon class="material-symbols-outlined">apps</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a routerLink="/">
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">home</mat-icon>
+          <h3 class="text-primary">Zuri Genesys</h3>
+        </button>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <button mat-menu-item [matMenuTriggerFor]="accounts">
+        <mat-icon class="material-symbols-outlined">settings_suggest</mat-icon>
+        Manage Account
+      </button>
+
+      <mat-menu #accounts="matMenu">
+        <a routerLink="/auth/signup" *ngIf="!authEmail">
+          <button mat-menu-item>
+            <mat-icon class="material-symbols-outlined">account_circle</mat-icon>
+            Register
+          </button>
+        </a>
+
+        <mat-divider></mat-divider>
+
+        <a routerLink="/auth/signin" *ngIf="!authEmail">
+          <button mat-menu-item>
+            <mat-icon class="material-symbols-outlined">lock_open</mat-icon>
+            Login
+          </button>
+        </a>
+
+        <mat-divider></mat-divider>
+
+        <a routerLink="/auth/update-profile" *ngIf="authEmail">
+          <button mat-menu-item>
+            <mat-icon class="material-symbols-outlined">profile</mat-icon>
+            Update Profile
+          </button>
+        </a>
+
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item (click)="logOutUser()" *ngIf="authEmail">
+          <mat-icon class="material-symbols-outlined">lock</mat-icon>
+          Logout
+        </button>
+
+      </mat-menu>
+
+
+      <mat-divider></mat-divider>
+
+      <mat-divider></mat-divider>
+
+      <h4 class="pr-3" *ngIf="authEmail">Logged in as: <span class="text-warn">{{ authEmail }}</span></h4>
+      <h4 class="pr-3" *ngIf="!authEmail">Not Logged in. <a routerLink="/auth/signin">Login to Continue</a></h4>
+
+      <mat-divider></mat-divider>
+
+    </mat-menu>
+
+
+      <h1>Zuri Genesys</h1>
+      <small class="text-black ml-2">Analytics</small>
+
+  </mat-toolbar>
+</nav>
