@@ -1,0 +1,92 @@
+
+<section>
+  <mat-card>
+    <mat-card-title>
+      <h3><a routerLink="/auth/signin">&nbsp; &nbsp;Already Signed Up</a></h3>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-horizontal-stepper [linear]="true" #stepper [animationDuration]="duration">
+        <mat-step [stepControl]="signUpForm">
+          <form [formGroup]="signUpForm">
+            <ng-template matStepLabel>Fill out your Basic Information</ng-template>
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>First Name </mat-label>
+              <mat-icon matPrefix  class="material-symbols-outlined">info</mat-icon>
+              <mat-hint align="end"></mat-hint>
+              <input type="text" matInput  formControlName = "first_name" placeholder="First Name">
+            </mat-form-field>
+            <div class="spacer"></div>
+
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Last Name </mat-label>
+              <mat-icon matPrefix  class="material-symbols-outlined">info</mat-icon>
+              <mat-hint align="end"></mat-hint>
+              <input type="text" matInput  formControlName = "last_name" placeholder="Last Name">
+            </mat-form-field>
+            <div class="spacer"></div>
+
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Email </mat-label>
+              <mat-hint align="end"></mat-hint>
+              <input type="email" matInput email="true" formControlName="email" placeholder="Email Address" >
+              <mat-icon matPrefix  class="material-symbols-outlined">mail_outline</mat-icon>
+            </mat-form-field>
+            <div class="spacer"></div>
+
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Password </mat-label>
+              <mat-hint align="end"></mat-hint><mat-icon matPrefix  class="material-symbols-outlined">security</mat-icon>
+              <input [type]="Input_Type" matInput formControlName="password" placeholder="Password">
+            </mat-form-field>
+            <div class="spacer"></div>
+
+
+           <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Country</mat-label>
+              <mat-hint align="end"></mat-hint>
+              <mat-icon matPrefix  class="material-symbols-outlined">info</mat-icon>
+              <mat-select formControlName="country">
+                <mat-option *ngFor="let entry of Countries" [value]="entry.Country_Code_1" (click)="getCountryPrefix(entry.Phone_Prefix)">
+                  {{ entry.Country_Name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="spacer"></div>
+
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Phone Number </mat-label>
+              <mat-hint align="end"></mat-hint>
+              <span matPrefix>{{ Phone_Prefix }} </span>
+              <input type="tel" matInput tel="true" formControlName="phone_number" placeholder="Phone Number">
+            </mat-form-field>
+            <div class="spacer"></div>
+
+            <mat-card-actions class="align-buttons-center">
+            <button type="submit" class="text-white" mat-raised-button matStepperNext [disabled]="!signUpForm.valid">
+              <mat-icon class="material-symbols-outlined">sign_uo</mat-icon>
+              Signup
+            </button>
+
+            <button mat-raised-button class="text-white" (click)="resetForm()"><mat-icon class="material-symbols-outline">clear</mat-icon>Clear</button>
+
+            <div id="g_id_onload" data-client_id="509879787940-916gm3du5c66489mc6q1ob9p7ovhlr8f.apps.googleusercontent.com"
+              data-context="signin" data-ux_mode="popup" data-callback="signUpWithGoogle" data-nonce="" data-auto_select="true"
+              data-itp_support="true" >
+            </div>
+
+            <button mat-button class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+              data-size="large" data-logo_alignment="left">
+            </button>
+
+          </mat-card-actions>
+
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+
+  </mat-card>
+
+</section>
+
+
