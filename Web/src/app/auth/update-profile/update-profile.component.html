@@ -1,0 +1,225 @@
+<section>
+  <mat-card>
+    <mat-card-title>
+      <h3>
+        Your Profile
+      </h3>
+    </mat-card-title>
+    <mat-card-content>
+
+      <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()" *ngIf="User">
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>First Name </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="first_name" [(ngModel)]="User.profile.first_name">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Last Name </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="last_name" [(ngModel)]="User.profile.last_name">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Phone Number</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="phone" matInput formControlName="phone_number" [(ngModel)]="User.profile.phone_number">
+          <mat-icon matPrefix class="material-symbols-outlined">call</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Preffered Username </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="username" [(ngModel)]="User.profile.username">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Bio </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <textarea matInput  formControlName="bio" [(ngModel)]="User.profile.bio"></textarea>
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Image Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="image_url" [(ngModel)]="User.profile.image_url">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Whatsapp Number</mat-label>
+          <mat-hint align="end">If Different From Phone Number</mat-hint>
+          <input type="phone" matInput formControlName="whatsapp_number" [(ngModel)]="User.profile.whatsapp_number">
+          <mat-icon matPrefix class="material-symbols-outlined">call</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>X Profile Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="x_link" [(ngModel)]="User.profile.x_link">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Instagram Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="instagram_link" [(ngModel)]="User.profile.instagram_link">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Facebook Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="facebook_link" [(ngModel)]="User.profile.facebook_link">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Youtube Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="youtube_link" [(ngModel)]="User.profile.youtube_link">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+
+
+        
+        <mat-card-actions class="align-buttons-center">
+          <button type="reset" mat-raised-button color="warn" class="text-white">
+            <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+            Clear
+          </button>
+          <button type="submit" mat-raised-button [disabled]="!updateProfileForm.valid">
+            <mat-icon class="material-symbols-outlined">update</mat-icon>
+            Update Profile
+          </button>
+        </mat-card-actions>
+      </form>
+
+
+      <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()" *ngIf="!User">
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>First Name </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="first_name" placeholder="First Name">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Last Name </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="last_name" placeholder="Last Name">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Phone Number</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="phone" matInput formControlName="phone_number" placeholder="Phone Number">
+          <mat-icon matPrefix class="material-symbols-outlined">call</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Preffered Username </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="text" matInput formControlName="username" placeholder="Username">
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Bio </mat-label>
+          <mat-hint align="end"></mat-hint>
+          <textarea matInput  formControlName="bio"></textarea>
+          <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Image Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="image_url" placeholder="Link To Uploaded Image">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Whatsapp Number</mat-label>
+          <mat-hint align="end">If Different From Phone Number</mat-hint>
+          <input type="phone" matInput formControlName="whatsapp_number" placeholder="Whatsapp Number">
+          <mat-icon matPrefix class="material-symbols-outlined">call</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>X Profile Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="x_link" placeholder="Link To X Profile">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+        <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Instagram Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="instagram_link" placeholder="Link To Instagram profile">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Facebook Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="facebook_link" placeholder="Link To Facebook profile">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+         <mat-form-field appearance="outline" class="p-1">
+          <mat-label>Youtube Link</mat-label>
+          <mat-hint align="end"></mat-hint>
+          <input type="url" matInput formControlName="youtube_link" placeholder="Link To Youtube Channel">
+          <mat-icon matPrefix class="material-symbols-outlined">link</mat-icon>
+        </mat-form-field>
+        <div class="spacer"></div>
+
+
+
+        
+        <mat-card-actions class="align-buttons-center">
+          <button type="reset" mat-raised-button color="warn" class="text-white">
+            <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+            Clear
+          </button>
+          <button type="submit" mat-raised-button [disabled]="!updateProfileForm.valid">
+            <mat-icon class="material-symbols-outlined">update</mat-icon>
+            Update Profile
+          </button>
+        </mat-card-actions>
+      </form>
+
+      <mat-divider></mat-divider>
+      <!-- <button mat-button color="accent" id="googleSignInBtn"></button> -->
+    </mat-card-content>
+  </mat-card>
+</section>
+
+
