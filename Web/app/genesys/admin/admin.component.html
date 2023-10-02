@@ -1,0 +1,46 @@
+<section>
+  <mat-card>
+    <mat-card-title>
+      <h2>Set Access Token For Nylas</h2>
+    </mat-card-title>
+  </mat-card>
+  <mat-card-content>
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+
+      <mat-tab label="Save Nylas Token">
+        <form [formGroup]="nylasTokensForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="p-1">
+            <mat-label>Account Email </mat-label>
+            <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+            <mat-hint align="end"></mat-hint>
+            <input type="email" email="true" matInput formControlName="acct_email" placeholder="Account Email">
+          </mat-form-field>
+          <div class="spacer"></div>
+      
+          <mat-form-field appearance="outline" class="p-1">
+            <mat-label>Auth Token</mat-label>
+            <mat-icon matPrefix class="material-symbols-outlined">info</mat-icon>
+            <mat-hint align="end"></mat-hint>
+            <input type="text" matInput formControlName="acct_token" placeholder="Acct Token From Nylas">
+          </mat-form-field>
+          <div class="spacer"></div>
+      
+          <mat-card-actions class="align-content-center">
+            <button type="reset" mat-raised-button color="warn" class="text-white">
+              <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+              Clear
+            </button>
+            <button type="submit" mat-raised-button [disabled]="!nylasTokensForm.valid">
+              <mat-icon class="material-symbols-outlined">lock_open</mat-icon>
+              Set Token
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-tab>
+
+    </mat-tab-group>
+
+    
+  </mat-card-content>
+</section>
