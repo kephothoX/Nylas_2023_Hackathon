@@ -9,8 +9,6 @@ import base64
 from google.cloud import texttospeech
 
 client = texttospeech.TextToSpeechClient()
-"""client = storage.Client()
-bucket = client.get_bucket("https://console.firebase.google.com/project/zuri-genesys/storage/zuri-genesys.appspot.com/files")"""
 
 class Data(BaseModel):
     text: str
