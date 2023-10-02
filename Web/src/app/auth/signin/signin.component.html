@@ -1,0 +1,62 @@
+<section>
+  <mat-card>
+    <mat-card-title>
+      <h3>
+        <a routerLink="/auth/signup">&nbsp; &nbsp;No Account Yet?</a>
+        <a routerLink="/auth/reset-password">&nbsp; &nbsp;Forgot Password?</a>
+      </h3>
+    </mat-card-title>
+    <mat-card-content>
+    
+
+      <mat-tab-group color="primary" animationDuration="1000ms" class="mat-elevation-z6">
+        
+        <mat-tab label="Login With Google">
+          <button mat-raised-button color="accent" class="text-white" (click)="loginWithGoogle()"><mat-icon class="material-symbols-outlined">google</mat-icon>Login With Google</button>
+        </mat-tab>
+
+        <mat-tab label="Login With Password">
+          <form [formGroup]="signInForm" (ngSubmit)="onPasswordSubmit()">
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Email </mat-label>
+              <mat-hint align="end"></mat-hint>
+              <input type="email" matInput email="true" formControlName="email_address" placeholder="Email Address">
+              <mat-icon matPrefix class="material-symbols-outlined">mail_outline</mat-icon>
+            </mat-form-field>
+            <div class="spacer"></div>
+        
+            <mat-form-field appearance="outline" class="p-1">
+              <mat-label>Password </mat-label>
+              <mat-hint align="end"></mat-hint>
+              <mat-icon matPrefix class="material-symbols-outlined">security</mat-icon>
+              <input [type]="Input_Type" matInput formControlName="password" placeholder="Password">
+            </mat-form-field>
+            <button mat-icon-button color="accent" (click)="toggleInputType($event)"><mat-icon
+                class="material-symbols-outlined">visibility_off</mat-icon></button>
+            <div class="spacer"></div>
+        
+            <mat-card-actions class="align-buttons-center">
+              <button type="reset" mat-raised-button color="warn" class="text-white">
+                <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+                Clear
+              </button>
+              <button type="submit" mat-raised-button [disabled]="!signInForm.valid">
+                <mat-icon class="material-symbols-outlined">lock_open</mat-icon>
+                Login
+              </button>
+            </mat-card-actions>
+          </form>
+        </mat-tab>
+        </mat-tab-group>
+      
+
+      <mat-divider></mat-divider>
+      <!-- <button mat-button color="accent" id="googleSignInBtn"></button> -->
+    </mat-card-content>
+  </mat-card>
+</section>
+
+
+
+
+
