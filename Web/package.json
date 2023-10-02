@@ -1,0 +1,52 @@
+{
+  "name": "Zuri",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 4200 --proxy-config ./proxy_dev.conf.json",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@abacritt/angularx-social-login": "^2.1.0",
+    "@angular-material-components/datetime-picker": "^16.0.1",
+    "@angular/animations": "^16.2.1",
+    "@angular/cdk": "^16.2.1",
+    "@angular/common": "^16.2.1",
+    "@angular/compiler": "^16.2.1",
+    "@angular/core": "^16.2.1",
+    "@angular/forms": "^16.2.1",
+    "@angular/material": "^16.2.1",
+    "@angular/platform-browser": "^16.2.1",
+    "@angular/platform-browser-dynamic": "^16.2.1",
+    "@angular/router": "^16.2.1",
+    "@google-cloud/firestore": "^6.7.0",
+    "@google-cloud/speech": "^6.0.2",
+    "firebase": "^10.2.0",
+    "localstorage-slim": "^2.6.0",
+    "material-design-icons": "^3.0.1",
+    "moment": "^2.29.4",
+    "node-record-lpcm16": "^1.0.1",
+    "pangea-node-sdk": "^2.0.0",
+    "rxjs": "~7.8.1",
+    "safe-pipe": "^2.0.5-0",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.13.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.0",
+    "@angular/cli": "^16.2.0",
+    "@angular/compiler-cli": "^16.2.1",
+    "@types/jasmine": "~4.3.5",
+    "@types/node": "^20.8.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.1",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.6"
+  }
+}

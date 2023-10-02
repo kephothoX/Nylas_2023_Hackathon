@@ -1,0 +1,36 @@
+{
+  "v2": {
+    "target": "https://pci-connect.squareupsandbox.com/payments/mtx/",
+    "secure": false
+  },
+
+  "/pangea/*" : {
+    "target": "https://gcp.us.pangea.cloud/",
+    "secure": false
+  },
+
+  "/api/*": {
+    "target": "http://localhost:8000",
+    "secure": false
+  },
+
+  "/log?format=*": {
+    "target": "https://play.google.com",
+    "secure": false
+  },
+
+  "/select?client_id=*": {
+    "target": "https://accounts.google.com/gsi/iframe",
+    "secure": false
+  },
+
+  "/log?client_id=*": {
+    "target": "https://accounts.google.com/gsi",
+    "secure": false
+  },
+
+  "/log?format=json&hasfast=true&authuser=0": {
+    "target": "https://play.google.com",
+    "secure": false
+  }
+}

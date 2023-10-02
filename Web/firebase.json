@@ -1,0 +1,421 @@
+{
+  "functions": {
+      "codebase": "functions"
+    },
+
+  "emulators": {
+    "redirects": [
+      {
+        "source": "/oauth",
+        "destination": "https://connect.squareupsandbox.com/oauth",
+        "type": 302
+      },
+
+      {
+        "source": "/oauth",
+        "destination": "https://connect.squareupsandbox.com/oauth",
+        "type": 302
+      },
+      {
+        "source": "/v2",
+        "destination": "https://connect.squareupsandbox.com/v2",
+        "type": 302
+      }
+    ],
+
+    "firestore": {
+      "port": 13080
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    },
+    "auth": {
+      "port": 7080
+    },
+    "functions": {
+      "port": 5080
+    },
+    "database": {
+      "port": 6080
+    },
+    "hosting": {
+      "port": 10080
+    },
+    "pubsub": {
+      "port": 11080
+    }
+  },
+
+  "hosting": {
+    "public": "dist/Ux",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+
+
+
+    "headers": [
+      {
+        "source": "https://connect.squareupsandbox.com/*",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ],
+
+    "rewrites": [
+      {
+        "source": "/getSquareMerchants",
+        "function": "getSquareMerchants",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareLocations",
+        "function": "getSquareLocations",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareCatalog",
+        "function": "getSquareCatalog",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareCatalog",
+        "function": "newSquareCatalog",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareLocation",
+        "function": "newSquareLocation",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareLocation",
+        "function": "getSquareLocation",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/editSquareLocation",
+        "function": "editSquareLocation",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareCustomer",
+        "function": "newSquareCustomer",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareMainLocation",
+        "function": "getSquareMainLocation",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareCustomerByEmail",
+        "function": "getSquareCustomerByEmail",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareCatalogObjectByID",
+        "function": "getSquareCatalogObjectByID",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareOnlineSubscriptionCheckout",
+        "function": "newSquareOnlineSubscriptionCheckout",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareSubscription",
+        "function": "newSquareSubscription",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareCard",
+        "function": "newSquareCard",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareCards",
+        "function": "getSquareCards",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareCard",
+        "function": "getSquareCard",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/disableSquareCard",
+        "function": "disableSquareCard",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareOrder",
+        "function": "newSquareOrder",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquareInvoice",
+        "function": "newSquareInvoice",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareInvoices",
+        "function": "getSquareInvoices",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/payment",
+        "function": "payment",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/newSquarePayment",
+        "function": "newSquarePayment",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+       {
+        "source": "/getSquareUsers",
+        "function": "getSquareUsers",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/getSquareUser",
+        "function": "getSquareUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/updateSquareUser",
+        "function": "updateSquareUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/deleteSquareUser",
+        "function": "deleteSquareUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/getSquareSubscriptions",
+        "function": "getSquareSubscriptions",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/updateSquareLocation",
+        "function": "updateSquareLocation",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pauseSquareSubscription",
+        "function": "pauseSquareSubscription",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/cancelSquareSubscription",
+        "function": "cancelSquareSubscription",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/resumeSquareSubscription",
+        "function": "resumeSquareSubscription",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/startPangeaAuthFlowStart",
+        "function": "startPangeaAuthFlowStart",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/newPangeaUser",
+        "function": "newPangeaUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaUpdateUser",
+        "function": "pangeaUpdateUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaVerifyUser",
+        "function": "pangeaVerifyUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaVerifyEmail",
+        "function": "pangeaVerifyEmail",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaVerifyPassword",
+        "function": "pangeaVerifyPassword",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaStartMFAEnrollment",
+        "function": "pangeaStartMFAEnrollment",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaStartMFAVerification",
+        "function": "pangeaStartMFAVerification",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaCompleteMFAEnrollment",
+        "function": "pangeaCompleteMFAEnrollment",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaGetFlowState",
+        "function": "pangeaGetFlowState",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaVerifyMFAComplete",
+        "function": "pangeaVerifyMFAComplete",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaFlowComplete",
+        "function": "pangeaFlowComplete",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaLoginWithPassword",
+        "function": "pangeaLoginWithPassword",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaPasswordReset",
+        "function": "pangeaPasswordReset",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+      {
+        "source": "/pangeaAuditLog",
+        "function": "pangeaAuditLog",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+
+      {
+        "source": "/pangeaCheckEmailBreach",
+        "function": "pangeaCheckEmailBreach",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+
+      {
+        "source": "/pangeaLogoutUser",
+        "function": "pangeaLogoutUser",
+        "region": "us-central1",
+        "pinTag": true
+      },
+
+
+      {
+        "source": "/pangeaUpdateUserPassword",
+        "function": "pangeaUpdateUserPassword",
+        "region": "us-central1",
+        "pinTag": true
+      }
+
+    ]
+  }
+}
