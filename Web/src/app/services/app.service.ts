@@ -13,13 +13,13 @@ import { getFunctions } from 'firebase/functions';
 })
 export class AppService {
   firebaseConfig = {
-    apiKey: "AIzaSyDv0Nz0N6faQLCzTmG3sIxqqbL79mdwxGo",
-    authDomain: "zuri-genesys.firebaseapp.com",
-    projectId: "zuri-genesys",
-    storageBucket: "zuri-genesys.appspot.com",
-    messagingSenderId: "190762699167",
-    appId: "1:190762699167:web:aba719ff8ea24e559055aa",
-    measurementId: "G-KHTP2FB9LV"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
   };
 
   app = initializeApp(this.firebaseConfig);
