@@ -1,4 +1,7 @@
 # Nylas_2023_Hackathon
+Angular Version:  ^16.0.0
+Node Version: ^16.18.0
+python3.9
 
 Open terminal and 
 
